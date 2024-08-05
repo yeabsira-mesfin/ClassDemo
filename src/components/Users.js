@@ -23,10 +23,13 @@ const Users = () => {
       ))}
     </ul>
   );
+  let color = 'yellow'
 
   return (
     <div className={classes.users}>
-      <button onClick={toggleUsersHandler}>
+      <button onClick={toggleUsersHandler} style={{color:showUsers?color:'white', 
+      background:showUsers?'red':'green',
+      borderBlockColor:showUsers?'red':'green',outline:'none'}}>
         {showUsers ? 'Hide' : 'Show'} Users
       </button>
       {showUsers && usersList}
