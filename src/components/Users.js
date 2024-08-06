@@ -3,11 +3,7 @@ import User from './User';
 
 import classes from './Users.module.css';
 
-const DUMMY_USERS = [
-  { id: 'u1', name: 'Max' },
-  { id: 'u2', name: 'Manuel' },
-  { id: 'u3', name: 'Julie' },
-];
+
 
 class Users extends Component{
    constructor(){
@@ -27,7 +23,7 @@ class Users extends Component{
   render(){ 
       const usersList = (
     <ul>
-      {DUMMY_USERS.map((user) => (
+      {this.props.users.map((user) => (
         <User key={user.id} name={user.name} />
       ))}
     </ul>
@@ -38,7 +34,7 @@ let color = 'yellow'
     <div className={classes.users}>
     <button onClick={this.toggleUsersHandler} style={{color:this.state.showUsers?color:'white', 
     background:this.state.showUsers?'red':'green',
-    borderBlockColor:this.state.showUsers?'red':'green',outline:'none'}}>
+    borderColor:this.state.showUsers?'red':'green',outline:'none'}}>
       {this.state.showUsers ? 'Hide' : 'Show'} Users
     </button>
     {this.state.showUsers && usersList}
