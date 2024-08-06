@@ -11,10 +11,12 @@ const DUMMY_USERS = [
 
 class Users extends Component{
    constructor(){
+    super();
     this.state = {
       showUsers:true,
       more:'Test'
     };
+    this.toggleUsersHandler = this.toggleUsersHandler.bind(this); 
    }
      
   toggleUsersHandler(){
@@ -34,9 +36,9 @@ let color = 'yellow'
     
     return(
     <div className={classes.users}>
-    <button onClick={toggleUsersHandler} style={{color:showUsers?color:'white', 
-    background:showUsers?'red':'green',
-    borderBlockColor:showUsers?'red':'green',outline:'none'}}>
+    <button onClick={this.toggleUsersHandler} style={{color:this.state.showUsers?color:'white', 
+    background:this.state.showUsers?'red':'green',
+    borderBlockColor:this.state.showUsers?'red':'green',outline:'none'}}>
       {this.state.showUsers ? 'Hide' : 'Show'} Users
     </button>
     {this.state.showUsers && usersList}
