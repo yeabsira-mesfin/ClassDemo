@@ -3,7 +3,7 @@ import User from './User';
 import classes from './Users.module.css';
 
 class Users extends Component {
-  constructor(props) { // Added props argument
+  constructor(props) { 
     super(props);
     this.state = {
       showUsers: true,
@@ -36,7 +36,7 @@ class Users extends Component {
           style={{
             color: this.state.showUsers ? color : 'white',
             background: this.state.showUsers ? 'red' : 'green',
-            borderColor: this.state.showUsers ? 'red' : 'green', // Corrected CSS property
+            borderColor: this.state.showUsers ? 'red' : 'green', 
             outline: 'none',
           }}
         >
