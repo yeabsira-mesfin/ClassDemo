@@ -1,1 +1,1 @@
-This project shows the optional use of class components in react.js
+This project shows the optional use of class components in react.js compared to functional components.
